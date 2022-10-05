@@ -6,6 +6,9 @@ import board, busio, displayio, time
 import adafruit_displayio_ssd1306
 import adafruit_imageload
 
+IMAGE_FILE = "icon.bmp"
+FRAMES = 28
+
 def invert_colors():
     temp = icon_pal[0]
     icon_pal[0] = icon_pal[1]
@@ -18,11 +21,11 @@ sda, scl = board.GP0, board.GP1
 i2c = busio.I2C(scl, sda)
 display_bus = displayio.I2CDisplay(i2c, device_address=0x3C)
 display = adafruit_displayio_ssd1306.SSD1306(display_bus, width=128, height=64)
-frames = 28
+
 group = displayio.Group()
 
 #  load the spritesheet
-icon_bit, icon_pal = adafruit_imageload.load("/icon.bmp",
+icon_bit, icon_pal = adafruit_imageload.load(IMAGE_FILE,
                                                  bitmap=displayio.Bitmap,
                                                  palette=displayio.Palette)
 invert_colors()
@@ -45,5 +48,5 @@ while True:
     icon_grid[0] = pointer
     pointer += 1
     timer = time.monotonic()
-    if pointer > frames-1:
+    if pointer > FRAMES-1:
       pointer = 0
