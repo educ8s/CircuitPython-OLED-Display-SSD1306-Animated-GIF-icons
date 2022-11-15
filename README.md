@@ -6,3 +6,9 @@
 </p>
 
 🎥 [Watch the video on YouTube](https://youtu.be/WqyBWcjs_oY)
+
+# Parts Needed
+
+🛒 Monochrome OLED: http://educ8s.tv/part/OLED096
+🛒 Color OLED: http://educ8s.tv/part/ColorOLED
+🛒  Raspberry Pi Pico: http://educ8s.tv/part/RaspberryPiPico
